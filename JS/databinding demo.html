@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>angular with js</title>
+</head>
+<body>
+    <div bent-controller="ExampleController">
+        <p>{{ someString }}</p>
+        <p>{{ someBolean }}</p>
+        <p> {{ someInteger }}</p>
+        <p>not valid</p>
+      </div>
+
+      <script>
+
+        function ExampleController() {
+            this.someString = ":)";
+            this.someBolean = true;
+            this.someInteger = 12;
+        }
+
+        var regex = /{{[A-z\d\s]*}}$/;
+
+        var ctrl = document.querySelectorAll('[bent-controller="ExampleController"]')[0];
+        var children = ctrl.children;
+        var exampleController = new ExampleController();
+
+        for (var index = 0; index < children.length; index++) {
+            var element = children[index];
+
+            var innerText = element.innerHTML;
+            var result = innerText.match(regex);
+
+            if(typeof(result) !== 'undefined' && result !== null){
+                result = result[0];
+                var name = result.replace(/{{/,'').replace(/}}/,'').replace(/\s/g, '');
+                           
+                for (var ele in exampleController) {
+                    if(ele === name){
+                        element.innerHTML = name;
+                    }
+                    
+                }
+            }
+
+        }
+      </script>
+</body>
+</html>
