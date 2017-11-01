@@ -1,0 +1,87 @@
+.full {
+    background-color:  palegoldenrod;
+}
+.container {   
+    font-size: 3.2rem * 2;  
+    background-color: white;
+}
+
+#option-one {
+    background-color: paleturquoise;  
+}
+
+#option-two {
+    background-color: palegreen;
+}
+
+#option-three {
+    background-color: palevioletred;
+}
+
+#option-four {
+    background-color:  lemonchiffon;
+}
+
+#option-five {
+    background-color: firebrick;
+}
+// TEXT CENTER
+#option-one .container {
+    text-align: center;
+}
+
+// HORIZONTAL CENTER DIV
+#option-two .container {
+    margin: 0 auto;
+    width: 60%;
+    display: block;
+}
+
+// VERTICAL-HORIZONTAL CENTER DIV
+#option-three .container {
+    background-color:aqua;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height: 100%;
+}
+
+// VERTICAL-HORIZONTAL CENTER DIV
+#option-four .container {
+    background-color: coral;
+    height: 100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+
+    div {
+        width: 60%;
+        background-color: bisque;
+        border: solid floralwhite 2px;
+    }
+    
+}
+
+// VERTICAL-HORIZONTAL CENTER DIV
+#option-five .container {
+    background-color: goldenrod;
+    height: 100%;
+    position: relative;
+    
+    .wrapper {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        div {
+            
+            width: 60%;
+            background-color: bisque;
+            border: solid floralwhite 2px;
+        }
+    }
+    
+    
+}
