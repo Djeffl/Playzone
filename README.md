@@ -1,3 +1,3 @@
 # Playzone
 
-Sanboxing & demos
+Sandboxing & demos
